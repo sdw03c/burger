@@ -1,4 +1,4 @@
-li {
+/* li {
   padding: 5px;
   margin: 5px;
   background: #faebd7;
@@ -16,4 +16,15 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+} */
+
+.center{text-align:center}
+
+img{align-content: center}
+
+.col-sm-6{
+
+  border: 3px solid white;
+  border-radius: 25px;
+
 }
