@@ -27,7 +27,7 @@ var orm = {
   },
 
   insertOne: function(burgerTable, burgerName, newBurger, cb){
-    var queryString = "INSERT INTO ?? (??) VALUE ?? "
+    var queryString = "INSERT INTO ?? (??) VALUES (?) "
     connection.query(queryString, [burgerTable, burgerName, newBurger], function(err, data){
       if (err){
         throw err;

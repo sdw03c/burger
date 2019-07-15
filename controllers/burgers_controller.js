@@ -13,16 +13,19 @@ res.render("index", {data})
 })
 })
 
-router.post("/api/burger", function(req, res){
-  burger.insertOne(newBurger,[req.body.newBurgerName],function(data){
-    console.log(data)
+router.post("/", function(req, res){
+  newBurger = req.body.burgerName
+  burger.insertOne(newBurger, function(data){
+    console.log(newBurger)
+    res.redirect("/")
+    //console.log(data)
   })
 })
 
 router.put("api/burger/:id", function(req,res){
   burger.updateOne(function(data){
     console.log(data);
-    
+ 
   })
 })
 
