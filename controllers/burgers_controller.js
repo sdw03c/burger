@@ -22,11 +22,19 @@ router.post("/", function(req, res){
   })
 })
 
-router.put("api/burger/:id", function(req,res){
-  burger.updateOne(function(data){
+router.put("/api/burger/:newBurger" , function(req,res){
+  eatenVariable = req.body.eatenVariable
+  //updateBurger = req.params.updateBurger.eatenVariable,
+  newBurger = req.params.newBurger
+  console.log(eatenVariable);
+  console.log(newBurger);
+  burger.updateOne(eatenVariable, newBurger, function(data){
+//   console.log(updateBurger.eatenVariable)
     console.log(data);
- 
+    console.log("data");
   })
+  
+ // res.redirect("/")
 })
 
 module.exports = router;

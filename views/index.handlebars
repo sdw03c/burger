@@ -23,7 +23,7 @@
 <td>
 <li style="font-size: 18px">
   {{burger_name}}
-<button class="btn btn-default" class = "devoured" value="{{id}}" data-devoured="{{devoured}}">
+<button class="btn btn-default" id="devoured" value="{{burger_name}}" data-devoured="{{devoured}}">
 EAT IT!
 </button>
 </li>
@@ -57,7 +57,7 @@ EAT IT!
   <div class="form-group row">
 <label style ="font-size: 18px" for="burgerName" class="col-sm-2 col-form-label"><b>Insert Burger Name:</b></label>
     <div class="col-sm-8">
-    <input type="text" class="form-control" id="burgerName" name="burgerName">
+    <input type="text" class="form-control" id="burgerName" name="burgerName" required>
      </div>
      <div class="col-sm-1">
        <button type="submit" class="btn btn-primary">Submit</button>
@@ -70,4 +70,25 @@ EAT IT!
 
 </div>
 
- 
+ <script>
+$(".btn-default").on("click", function(){
+  console.log("here")
+//event.preventDefault()
+var newBurger = this.value;
+var updateBurger = {
+eatenVariable: 1
+}
+console.log(`${newBurger} and ${updateBurger.eatenVariable} and hiihihihih`)
+$.ajax("/api/burger/" + newBurger, {
+  type:"PUT",
+  data:updateBurger
+}).then(function(){
+console.log(`Changed to eaten: ${updateBurger} + ${newBurger}`)
+})
+})   
+
+$(document).ajaxStop(function(){
+window.location.reload();
+})
+
+ </script>

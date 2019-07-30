@@ -14,9 +14,10 @@ insertOne: function(newBurger, cb)
     cb(res);
   })
 },
-updateOne: function(cb)
+updateOne: function(eatenVariable, newBurger, cb)
 {
-  orm.updateOne("burgers", "devoured", "true", "burger_name", newBurger, function(res){
+  orm.updateOne("burgers", "devoured", eatenVariable, "burger_name", newBurger, function(res){
+   
     cb(res);
   })
 },

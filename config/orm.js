@@ -38,13 +38,12 @@ var orm = {
     })
 
   },
-  updateOne: function(burgerTable, eaten, eatenVariable, burgerName, newBurger){
+  updateOne: function(burgerTable, eaten, eatenVariable, burgerName, newBurger, cb){
     var queryString = "UPDATE ?? SET ?? = ?  WHERE ?? = ?"
     connection.query(queryString, [burgerTable, eaten, eatenVariable, burgerName, newBurger], function(err, data){
       if (err){
         throw err;
       }
-
       cb(data);
 
     })
