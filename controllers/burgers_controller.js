@@ -31,7 +31,7 @@ router.put("/api/burger/:newBurger" , function(req,res){
   burger.updateOne(eatenVariable, newBurger, function(data){
 //   console.log(updateBurger.eatenVariable)
     console.log(data);
-    console.log("data");
+    res.redirect("/")
   })
   
  // res.redirect("/")

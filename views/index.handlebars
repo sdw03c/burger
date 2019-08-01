@@ -78,12 +78,14 @@ var newBurger = this.value;
 var updateBurger = {
 eatenVariable: 1
 }
-console.log(`${newBurger} and ${updateBurger.eatenVariable} and hiihihihih`)
+console.log(`${newBurger} and ${updateBurger.eatenVariable} `)
 $.ajax("/api/burger/" + newBurger, {
   type:"PUT",
   data:updateBurger
 }).then(function(){
 console.log(`Changed to eaten: ${updateBurger} + ${newBurger}`)
+window.location = self.location
+location.reload(true)
 })
 })   
 
